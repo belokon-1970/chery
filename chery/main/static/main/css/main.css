@@ -14,6 +14,7 @@ li {
   list-style: none;
 }
 body {
+  position: relative;
   background-color: #214952;
 }
 .container {
@@ -78,10 +79,10 @@ body {
   margin-top: 2px solid #0a9ebf;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
   left: 0;
   right: 0;
+  bottom: 0;
   padding: 20px 0 20px;
   background-color: #0945e5;
 }
@@ -97,4 +98,13 @@ body {
   color: #ffffff;
   font-weight: 500;
   text-align: center;
+}
+.content__info {
+    padding: 40px 0 120px;
+}
+.content__info-text {
+    color: #0995e5;
+}
+.content__info-text span {
+    color: #fff;
 }
