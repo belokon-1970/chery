@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60b38b08-16c9-4daf-8268-b5bd3199dcbb" name="Changes" comment="Leson #2">
-      <change afterPath="$PROJECT_DIR$/chery/main/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chery/main/static/main/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chery/main/templates/main/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chery/main/templates/main/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chery/main/templates/main/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chery/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/main/static/main/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/static/main/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/templates/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/main/templates/main/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/templates/main/layout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756726254164</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Leson #2">
+      <option name="closed" value="true" />
+      <created>1756743403100</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1756743403100</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

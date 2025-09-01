@@ -40,13 +40,57 @@
                         </li>
                     </a>
                 </ul>
+                <div class="header__contact">
+                	<a class="header__contact-btn" href="#">Позонить нам</a>
+                </div>
             </div>
         </div>
     </header>
     <main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__top">
+                    <div class="container">
+                        <div class="header__inner footer__border">
+                            <a class="logo" href="#">
+                             <img class="chery__img" src="{% static 'main/img/chery.svg' %}" alt="logo">
+                            </a>
+                            <ul class="header__menu">
+                                <a class="header__menu-link" href="#">
+                                    <li class="header__menu-item">
+                                        Главная
+                                    </li>
+                                </a>
+                                <a class="header__menu-link" href="#">
+                                    <li class="header__menu-item">
+                                        Модели
+                                    </li>
+                                </a>
+                                <a class="header__menu-link" href="#">
+                                    <li class="header__menu-item">
+                                        О Компании
+                                    </li>
+                                </a>
+                                <a class="header__menu-link" href="#">
+                                    <li class="header__menu-item">
+                                        Контакты
+                                    </li>
+                                </a>
+                            </ul>
+                            <div class="header__contact">
+                                <a class="header__contact-btn" href="#">Позонить нам</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__botton">
+            	    <p class="footer__botton-text">© Все права защищены.
+            	    </p>
+                </div>
+            </div>
+        </footer>
     {% block content %}
     {% endblock%}
     </main>
-    <footer></footer>
 </body>
 </html>
