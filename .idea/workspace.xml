@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60b38b08-16c9-4daf-8268-b5bd3199dcbb" name="Changes" comment="Leson #1">
-      <change beforePath="$PROJECT_DIR$/hello.py" beforeDir="false" />
+    <list default="true" id="60b38b08-16c9-4daf-8268-b5bd3199dcbb" name="Changes" comment="Leson #2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/chery/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/chery/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/chery/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/chery/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/chery/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/manage.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +56,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/buka-/OneDrive/Рабочий стол/Илья/chery&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
@@ -113,12 +120,29 @@
       <option name="project" value="LOCAL" />
       <updated>1756719566303</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Leson #1">
+      <option name="closed" value="true" />
+      <created>1756726168058</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756726168058</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Leson #2">
+      <option name="closed" value="true" />
+      <created>1756726254164</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756726254164</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Leson #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leson #1" />
+    <MESSAGE value="Leson #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Leson #2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
