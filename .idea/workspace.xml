@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60b38b08-16c9-4daf-8268-b5bd3199dcbb" name="Changes" comment="Просто обновление">
-      <change afterPath="$PROJECT_DIR$/chery/main/templates/main/modeli.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/templates/main/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/templates/main/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/baza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/baza/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
