@@ -1,4 +1,5 @@
 {% load static %}
+{% block content %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-    <header class="header">
+<header class="header">
         <div class="container">
             <div class="header__inner">
                 <a class="logo" href="#">
@@ -46,12 +47,14 @@
             </div>
         </div>
     </header>
-    <div class="novosti">
+    <div class="conent__modeli">
         <div class="container">
-            <h1>Новости на сайте.</h1>
+            <h1>Паркинг салона моделей на сайте.</h1>
+            <p>На данной странице можно посмотреть,<br>
+            Какие есть модели на данный момент в нашем салоне.</p>
         </div>
     </div>
-    <main>
+<main>
     <footer class="footer">
     	<div class="container">
     		<div class="footer__top">
@@ -92,8 +95,6 @@
             </div>
         </div>
     </footer>
-    {% block content %}
-    {% endblock%}
-    </main>
 </body>
 </html>
+{% endblock %}

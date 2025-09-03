@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-    <header class="header">
+<header class="header">
         <div class="container">
             <div class="header__inner">
                 <a class="logo" href="#">
-                 <img class="chery__img" src="{% static 'main/img/chery.svg' %}" alt="logo">
+                    <img class="chery__img" src="{% static 'main/img/chery.svg' %}" alt="logo">
                 </a>
                 <ul class="header__menu">
                     <a class="header__menu-link" href="{% url 'home' %}">
@@ -24,7 +24,7 @@
                             Главная
                         </li>
                     </a>
-                    <a class="header__menu-link" href="{% url 'baza_home' %}">
+                    <a class="header__menu-link" href="{% url 'modeli' %}">
                         <li class="header__menu-item">
                             Модели
                         </li>
@@ -46,11 +46,6 @@
             </div>
         </div>
     </header>
-    <div class="novosti">
-        <div class="container">
-            <h1>Новости на сайте.</h1>
-        </div>
-    </div>
     <main>
     <footer class="footer">
     	<div class="container">
@@ -95,5 +90,3 @@
     {% block content %}
     {% endblock%}
     </main>
-</body>
-</html>
