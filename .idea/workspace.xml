@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60b38b08-16c9-4daf-8268-b5bd3199dcbb" name="Changes" comment="Просто обновление">
-      <change afterPath="$PROJECT_DIR$/chery/baza/baza.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chery/baza/templates/baza/baza_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chery/baza/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/chery/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/chery/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/chery/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/chery/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/templates/main/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/templates/main/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/templates/main/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/templates/main/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="60b38b08-16c9-4daf-8268-b5bd3199dcbb" name="Changes" comment="Просто обновление" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

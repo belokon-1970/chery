@@ -52,6 +52,14 @@
             <h1>Паркинг салона моделей на сайте.</h1>
             <p>На данной странице можно посмотреть,<br>
             Какие есть модели на данный момент в нашем салоне.</p>
+            {% for el in baza %}
+            <div class="baza__stati">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.anons }}</p>
+                <p>{{ el.full_text }}</p>
+                <date>{{ el.date }}</date>
+            </div>
+            {% endfor %}
         </div>
     </div>
 <main>
