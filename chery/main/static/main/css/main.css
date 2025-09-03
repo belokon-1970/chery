@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   border: 0;
@@ -14,8 +15,12 @@ li {
   list-style: none;
 }
 body {
-  position: relative;
   background-color: #214952;
+}
+.telo__row {
+  display: flex;
+  justify-content: space-between;
+  flex-decoration: colum;
 }
 .container {
   max-width: 1200px;
@@ -70,21 +75,9 @@ body {
   color: #fff;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   padding: 10px 0 10px;
   background-color: #0945e5;
   margin-top: 2px solid #0a9ebf;
-}
-.footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 20px 0 20px;
-  background-color: #0945e5;
 }
 .footer__border {
   padding-bottom: 40px;
