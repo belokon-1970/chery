@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-    <header class="header">
+<header class="header">
         <div class="container">
             <div class="header__inner">
                 <a class="logo" href="#">
-                 <img class="chery__img" src="{% static 'main/img/chery.svg' %}" alt="logo">
+                    <img class="chery__img" src="{% static 'main/img/chery.svg' %}" alt="logo">
                 </a>
                 <ul class="header__menu">
                     <a class="header__menu-link" href="{% url 'home' %}">
@@ -90,5 +90,3 @@
     {% block content %}
     {% endblock%}
     </main>
-</body>
-</html>

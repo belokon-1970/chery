@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60b38b08-16c9-4daf-8268-b5bd3199dcbb" name="Changes" comment="Leson #4">
+    <list default="true" id="60b38b08-16c9-4daf-8268-b5bd3199dcbb" name="Changes" comment="Просто обновление">
+      <change afterPath="$PROJECT_DIR$/chery/main/templates/main/modeli.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/templates/main/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chery/main/templates/main/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/templates/main/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chery/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chery/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -46,6 +50,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -140,14 +145,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756746391785</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Просто обновление">
+      <option name="closed" value="true" />
+      <created>1756892099680</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1756892099680</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Leson #1" />
     <MESSAGE value="Leson #2" />
     <MESSAGE value="Leson #4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leson #4" />
+    <MESSAGE value="Просто обновление" />
+    <option name="LAST_COMMIT_MESSAGE" value="Просто обновление" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
