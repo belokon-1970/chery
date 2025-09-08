@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60b38b08-16c9-4daf-8268-b5bd3199dcbb" name="Changes" comment="Просто обновление">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/baza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/chery/baza/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/baza/templates/baza/baza_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/baza/templates/baza/baza_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/static/main/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/static/main/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chery/main/templates/main/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/chery/main/templates/main/layout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +53,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/buka-/OneDrive/Рабочий стол/Илья/chery&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/buka-/OneDrive/Рабочий стол/Илья/Диплом/chery&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
