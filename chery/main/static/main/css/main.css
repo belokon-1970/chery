@@ -16,7 +16,7 @@ li {
 }
 body {
   position: relative;
-  height: 120vh;
+  height: 130vh;
   background-color: #8d9395;
 }
 .telo__row {
@@ -120,12 +120,31 @@ body {
   margin-bottom: 20px;
 }
 .baza__stati {
+  transition: all .5s;
   margin-top: 30px;
   cursor: pointer;
   max-width: 240px;
   max-height: 35s0px;
   border-radius: 15px;
   background-color: #fff;
+}
+.baza__stati:hover {
+  animation: swing 0.5s ease;
+  animation-fill-mode: forwards;
+  -webkit-box-shadow: -25px -24px 15px -10px rgba(53, 58, 255, 0.26);
+  -moz-box-shadow: -25px -24px 15px -10px rgba(53, 58, 255, 0.26);
+  box-shadow: -25px -24px 15px -10px rgba(53, 58, 255, 0.26);
+}
+@keyframes swing {
+    33% {
+        transform: translateY(-10px);
+    }
+    66% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
 }
 .baza__stati-img {
   max-width: 200px;
@@ -135,4 +154,31 @@ body {
 }
 .baza__stati-tile {
   font-size: 15px
+}
+.kompaniya {
+  margin-top: 25px;
+}
+.kompaniya__text span {
+  font-size: 25px;
+  font-weight: bold;
+}
+.novosti__label {
+  font-size: 25px;
+  font-weight: bold;
+}
+.novosti__tel {
+  font-size: 25px;
+  transition: all.5s;
+  text-decoration: none;
+  color: #ccc;
+}
+.novosti__tel:hover {
+  color: red;
+}
+.kompaniya__inner {
+  display: flex;
+  justify-content: space-between;
+}
+.kompaniya__img {
+    max-width: 450px;
 }

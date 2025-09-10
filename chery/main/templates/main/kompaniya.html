@@ -1,11 +1,146 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-fhfhf
+    <div class="telo__row">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a class="logo" href="{% url 'home' %}">
+                        <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+                    </a>
+                    <ul class="header__menu">
+                        <a class="header__menu-link" href="{% url 'home' %}">
+                            <li class="header__menu-item">
+                                Главная
+                            </li>
+                        </a>
+                        <a class="header__menu-link" href="{% url 'baza_home' %}">
+                            <li class="header__menu-item">
+                                Модели
+                            </li>
+                        </a>
+                        <a class="header__menu-link" href="{% url 'kompaniya' %}">
+                            <li class="header__menu-item">
+                                Описание
+                            </li>
+                        </a>
+                        <a class="header__menu-link" href="#">
+                            <li class="header__menu-item">
+                                Контакты
+                            </li>
+                        </a>
+                    </ul>
+                    <div class="header__contact">
+                        <a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="kompaniya">
+                <div class="container">
+                    <div class="kompaniya__inner">
+                        <div class="kompaniya__left">
+                            <h1 class="novosti_title" style="color: #211414">Место положение компании.</h1>
+
+                            <p class="kompaniya__text">
+                                <span>ГК СИГМА</span> существует на рынке более 20-ти лет и является<br>
+                                одним из лидеров в СЗФО, за это время мы сделали<br>
+                                счастливыми более 10 000 клиентов.
+                            </p>
+
+                            <p class="kompaniya__text">
+                                <span>СИГМА CHERY</span> предлагает вашему вниманию полный спектр услуг по обслуживанию<br>
+                                автомобилей марки CHERY. Мы ценим и уважаем каждого клиента, ведь для наших сотрудников<br>
+                                высокий уровень сервиса стоит на первом месте!
+                            </p>
+
+                            <h1 class="novosti_title" style="color: #211414">Преимущества дилера СИГМА CHERY:</h1>
+
+                            <ul class="novosti__menu" type="ol">
+                                <li class="novosti__menu-list">Удобное расположение центров по всему Санкт-Петербургу;</li>
+                                <li class="novosti__menu-list">Квалифицированные сотрудники;</li>
+                                <li class="novosti__menu-list">Оперативность сервисной приемки;</li>
+                                <li class="novosti__menu-list">Специальные ежемесячные акции для всех клиентов;</li>
+                                <li class="novosti__menu-list">Комфортная зона ожидания и онлайн-трансляция зоны сервиса;</li>
+                                <li class="novosti__menu-list">Возможность присутствовать при ремонте вашего автомобиля.</li>
+                            </ul>
+
+                            <h1 class="novosti_title" style="color: #211414">Адреса сервисных центров:</h1>
+
+                            <ul class="novosti__menu" type="ol">
+                                <li class="novosti__menu-list">Санкт-Петербург, Большой пр-кт ВО, 98А</li>
+                                <li class="novosti__menu-list">Санкт-Петербург, Петроградская набережная 30А</li>
+                                <li class="novosti__menu-list">Санкт-Петербург, Проспект Маршала Блюхера 69А</li>
+                                <li class="novosti__menu-list">Санкт-Петербург, Московское шоссе 13А</li>
+                            </ul>
+
+                            <label class="novosti__label">Teлефон:</label><a class="novosti__tel"  href="tel:+79216841074">+79216841074</a>
+                        </div>
+                        <div class="kompaniya__rigtg">
+                            <img class="kompaniya__img" src="{% static 'main/img/salon.png' %}" alt="logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__top">
+                <header class="header">
+                <div class="container">
+                    <div class="header__inner">
+                        <a class="logo" href="#">
+                         <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+                        </a>
+                        <ul class="header__menu">
+                            <a class="header__menu-link" href="{% url 'home' %}">
+                                <li class="header__menu-item">
+                                    Главная
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Модели
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="{% url 'kompaniya' %}">
+                                <li class="header__menu-item">
+                                    Описание
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Контакты
+                                </li>
+                            </a>
+                        </ul>
+                        <div class="header__contact">
+                            <a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            </div>
+            <div class="footer__botton">
+            	<p class="footer__botton-text">
+            		© Все права защищены.
+            	</p>
+            </div>
+        </footer>
+    </div>
+    {% block content %}
+    {% endblock%}
+    </main>
 </body>
 </html>
