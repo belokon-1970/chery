@@ -16,8 +16,8 @@
 <header class="header">
         <div class="container">
             <div class="header__inner">
-                <a class="logo" href="#">
-                 <img class="chery__img" src="{% static 'main/img/chery.svg' %}" alt="logo">
+                <a class="logo" href="{% url 'home' %}">
+                    <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
                 </a>
                 <ul class="header__menu">
                     <a class="header__menu-link" href="{% url 'home' %}">
@@ -32,7 +32,7 @@
                     </a>
                     <a class="header__menu-link" href="#">
                         <li class="header__menu-item">
-                            О Компании
+                            Описание
                         </li>
                     </a>
                     <a class="header__menu-link" href="#">
@@ -42,7 +42,7 @@
                     </a>
                 </ul>
                 <div class="header__contact">
-                	<a class="header__contact-btn" href="#">Позонить нам</a>
+                	<a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
                 </div>
             </div>
         </div>
@@ -50,52 +50,68 @@
     <div class="content__modeli">
         <div class="container">
             <h1 style="text-align: center">Паркинг салона моделей на сайте.</h1>
-            <p style="text-align: center; color: #fff">На данной странице можно посмотреть,<br>
+            <p style="text-align: center; color: #333; font-weight: bold;">На данной странице можно посмотреть,<br>
             Какие есть модели на данный момент в нашем салоне.</p>
-            {% for el in baza %}
-            <div class="baza__stati">
-                <h3>{{ el.title }}</h3>
-                <img src="{{ el.image.url }}" alt="" style="width: 500px;">
-                <p>{{ el.anons }}</p>
-                <p>{{ el.full_text }}</p>
-                <date>{{ el.date }}</date>
+            <div class="content__modeli-flex">
+                {% for el in baza %}
+            <div class="content__modeli-row">
+
+                <div class="baza__stati">
+                    <div class="baza__stati-content">
+                        <img class="baza__stati-img" src="{{ el.image.url }}" alt="" style="width: 500px;">
+                        <footer class="footer-baza__stati">
+                            <h3 class="baza__stati-tile">{{ el.title }}</h3>
+                            <p>{{ el.anons }}</p>
+                            <p>{{ el.full_text }}</p>
+                            <date>{{ el.date }}</date>
+                        </footer>
+                    </div>
+                </div>
+
             </div>
             {% endfor %}
+
+            </div>
         </div>
     </div>
 <main>
     <footer class="footer">
     	<div class="container">
     		<div class="footer__top">
-    			<div class="header__inner footer__border">
-                <a class="logo" href="#">
-                 <img class="chery__img" src="{% static 'main/img/chery.svg' %}" alt="logo">
-                </a>
-                <ul class="header__menu">
-                    <a class="header__menu-link" href="">
-                        <li class="header__menu-item">
-                            Главная
-                        </li>
-                    </a>
-                    <a class="header__menu-link" href="">
-                        <li class="header__menu-item">
-                            Модели
-                        </li>
-                    </a>
-                    <a class="header__menu-link" href="#">
-                        <li class="header__menu-item">
-                            О Компании
-                        </li>
-                    </a>
-                    <a class="header__menu-link" href="#">
-                        <li class="header__menu-item">
-                            Контакты
-                        </li>
-                    </a>
-                </ul>
-                <div class="header__contact">
-                	<a class="header__contact-btn" href="#">Позонить нам</a>
+                <header class="header">
+                <div class="container">
+                    <div class="header__inner">
+                        <a class="logo" href="#">
+                         <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+                        </a>
+                        <ul class="header__menu">
+                            <a class="header__menu-link" href="{% url 'home' %}">
+                                <li class="header__menu-item">
+                                    Главная
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="{% url 'baza_home' %}">
+                                <li class="header__menu-item">
+                                    Модели
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Описание
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Контакты
+                                </li>
+                            </a>
+                        </ul>
+                        <div class="header__contact">
+                            <a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
+                        </div>
+                    </div>
                 </div>
+            </header>
             </div>
             <div class="footer__botton">
             	<p class="footer__botton-text">

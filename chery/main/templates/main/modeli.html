@@ -13,46 +13,45 @@
 </head>
 <body>
 <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <a class="logo" href="#">
-                    <img class="chery__img" src="{% static 'main/img/chery.svg' %}" alt="logo">
-                </a>
-                <ul class="header__menu">
-                    <a class="header__menu-link" href="{% url 'home' %}">
-                        <li class="header__menu-item">
-                            Главная
-                        </li>
+            <div class="container">
+                <div class="header__inner">
+                    <a class="logo" href="{% url 'home' %}">
+                        <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
                     </a>
-                    <a class="header__menu-link" href="{% url 'modeli' %}">
-                        <li class="header__menu-item">
-                            Модели
-                        </li>
-                    </a>
-                    <a class="header__menu-link" href="#">
-                        <li class="header__menu-item">
-                            О Компании
-                        </li>
-                    </a>
-                    <a class="header__menu-link" href="#">
-                        <li class="header__menu-item">
-                            Контакты
-                        </li>
-                    </a>
-                </ul>
-                <div class="header__contact">
-                	<a class="header__contact-btn" href="#">Позонить нам</a>
+                    <ul class="header__menu">
+                        <a class="header__menu-link" href="{% url 'home' %}">
+                            <li class="header__menu-item">
+                                Главная
+                            </li>
+                        </a>
+                        <a class="header__menu-link" href="{% url 'baza_home' %}">
+                            <li class="header__menu-item">
+                                Модели
+                            </li>
+                        </a>
+                        <a class="header__menu-link" href="#">
+                            <li class="header__menu-item">
+                                О Компании
+                            </li>
+                        </a>
+                        <a class="header__menu-link" href="#">
+                            <li class="header__menu-item">
+                                Контакты
+                            </li>
+                        </a>
+                    </ul>
+                    <div class="header__contact">
+                        <a class="header__contact-btn" href="#">Позонить нам</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
+        </header>
     <footer class="footer">
     	<div class="container">
     		<div class="footer__top">
     			<div class="header__inner footer__border">
                 <a class="logo" href="#">
-                 <img class="chery__img" src="{% static 'main/img/chery.svg' %}" alt="logo">
+                    <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
                 </a>
                 <ul class="header__menu">
                     <a class="header__menu-link" href="">
@@ -85,6 +84,7 @@
             		© Все права защищены.
             	</p>
             </div>
+                </div>
         </div>
     </footer>
     {% block content %}

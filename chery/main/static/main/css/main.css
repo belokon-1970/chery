@@ -15,7 +15,9 @@ li {
   list-style: none;
 }
 body {
-  background-color: #214952;
+  position: relative;
+  height: 120vh;
+  background-color: #8d9395;
 }
 .telo__row {
   display: flex;
@@ -32,7 +34,7 @@ body {
   height: 100px;
 }
 .header {
-  padding: 10px 0 10px;
+  padding: 15px 0 15px;
   background-color: #0945e5;
   border-bottom: 2px solid #0a9ebf;
 }
@@ -75,9 +77,12 @@ body {
   color: #fff;
 }
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 10px 0 10px;
-  background-color: #e50965;
-  margin-top: 2px solid #0a9ebf;
+  background-color: #0945e5;
 }
 .footer__border {
   padding-bottom: 40px;
@@ -100,4 +105,34 @@ body {
 }
 .content__info-text span {
     color: #fff;
+}
+.baza__stati-content {
+    padding: 20px 20px 20px 20px;
+}
+.content__modeli {
+  margin-top: 5px;
+}
+.content__modeli-flex {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.baza__stati {
+  margin-top: 30px;
+  cursor: pointer;
+  max-width: 240px;
+  max-height: 35s0px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+.baza__stati-img {
+  max-width: 200px;
+}
+.novosti_title {
+    color: #000;
+}
+.baza__stati-tile {
+  font-size: 15px
 }
