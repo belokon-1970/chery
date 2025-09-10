@@ -20,7 +20,7 @@ body {
 .telo__row {
   display: flex;
   justify-content: space-between;
-  flex-decoration: colum;
+  flex-direction: column;
 }
 .container {
   max-width: 1200px;
@@ -76,7 +76,7 @@ body {
 }
 .footer {
   padding: 10px 0 10px;
-  background-color: #0945e5;
+  background-color: #e50965;
   margin-top: 2px solid #0a9ebf;
 }
 .footer__border {

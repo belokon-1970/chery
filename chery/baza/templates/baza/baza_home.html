@@ -55,6 +55,7 @@
             {% for el in baza %}
             <div class="baza__stati">
                 <h3>{{ el.title }}</h3>
+                <img src="{{ el.image.url }}" alt="" style="width: 500px;">
                 <p>{{ el.anons }}</p>
                 <p>{{ el.full_text }}</p>
                 <date>{{ el.date }}</date>
