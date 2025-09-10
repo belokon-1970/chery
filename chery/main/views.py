@@ -6,11 +6,12 @@ def index(request):
 def about(request):
     return render(request, 'main/about.html')
 
+def kompaniya(request):
+    return render(request, 'main/kompaniya.html')
+
 def baza_home(request):
     return render(request, 'main/baza_home.html')
 
-def opisanie(request):
-    return render(request, 'main/opisanie.html'),
 
 
 
