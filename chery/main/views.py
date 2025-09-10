@@ -9,5 +9,11 @@ def about(request):
 def baza_home(request):
     return render(request, 'main/baza_home.html')
 
+def opisanie(request):
+    return render(request, 'main/opisanie.html'),
+
+
+
+
 
 
