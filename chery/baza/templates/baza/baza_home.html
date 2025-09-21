@@ -13,101 +13,113 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-<div class="wrapper">
-        <header class="header">
-            <div class="container">
-                <div class="header__inner">
-                    <a class="logo" href="{% url 'home' %}">
-                        <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+<header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a class="logo" href="{% url 'home' %}">
+                    <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+                </a>
+                <ul class="header__menu">
+                    <a class="header__menu-link" href="{% url 'home' %}">
+                        <li class="header__menu-item">
+                            Главная
+                        </li>
                     </a>
-                    <ul class="header__menu">
-                        <a class="header__menu-link" href="{% url 'home' %}">
-                            <li class="header__menu-item">
-                                Главная
-                            </li>
-                        </a>
-                        <a class="header__menu-link" href="{% url 'baza_home' %}">
-                            <li class="header__menu-item">
-                                Новости
-                            </li>
-                        </a>
-                        <a class="header__menu-link" href="{% url 'modeli' %}">
-                            <li class="header__menu-item">
-                                Модели
-                            </li>
-                        </a>
-                        <a class="header__menu-link" href="{% url 'kompaniya' %}">
-                            <li class="header__menu-item">
-                                Описание
-                            </li>
-                        </a>
-                        <a class="header__menu-link" href="#">
-                            <li class="header__menu-item">
-                                Контакты
-                            </li>
-                        </a>
-                    </ul>
-                    <div class="header__contact">
-                        <a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div class="content__modeli">
-            <div class="container">
-                <h1 style="text-align: center">Тут вы найдете свежие новости о мире авто.</h1>
-                <div class="content__modeli-center">
-                    <div class="content__modeli-flex">
-                    {% for el in baza %}
-                        <div class="content__modeli-center">
-
-                        <div class="content__novosti-row">
-                            <img class="content__novosti-img" src="{{ el.image.url }}" alt="img">
-                            <footer class="content__novosti__stati">
-                                <h3 class="content__novosti-tile">{{ el.title }}</h3>
-                                <p>{{ el.anons }}</p>
-                                <p>{{ el.full_text }}</p>
-                                <date>{{ el.date }}</date><br>
-                            </footer>
-
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                {% endfor %}
+                    <a class="header__menu-link" href="{% url 'baza_home' %}">
+                        <li class="header__menu-item">
+                            Модели
+                        </li>
+                    </a>
+                    <a class="header__menu-link" href="#">
+                        <li class="header__menu-item">
+                            Описание
+                        </li>
+                    </a>
+                    <a class="header__menu-link" href="#">
+                        <li class="header__menu-item">
+                            Контакты
+                        </li>
+                    </a>
+                </ul>
+                <div class="header__contact">
+                	<a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
                 </div>
             </div>
         </div>
-        <main>
-         <foooter class="footer">
-            <div class="container">
-                <div class="footer__top"></div>
-                <div class="footer__botton">
-                    <div class="footer__content">
-                        <p class="footer__content-text">
-                            © Все права защищены.
-                        </p>
+    </header>
+    <div class="content__modeli">
+        <div class="container">
+            <h1 style="text-align: center">Паркинг салона моделей на сайте.</h1>
+            <p style="text-align: center; color: #333; font-weight: bold;">На данной странице можно посмотреть,<br>
+            Какие есть модели на данный момент в нашем салоне.</p>
+            <div class="content__modeli-flex">
+                {% for el in baza %}
+            <div class="content__modeli-row">
+
+                <div class="baza__stati">
+                    <div class="baza__stati-content">
+                        <img class="baza__stati-img" src="{{ el.image.url }}" alt="" style="width: 500px;">
+                        <footer class="footer-baza__stati">
+                            <h3 class="baza__stati-tile">{{ el.title }}</h3>
+                            <p>{{ el.anons }}</p>
+                            <p>{{ el.full_text }}</p>
+                            <date>{{ el.date }}</date>
+                        </footer>
                     </div>
                 </div>
+
             </div>
-        </foooter>
+            {% endfor %}
 
-
-    <div class="okno">
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-              <p><span class="close__text">Chery Tiggo 9</span> — это современный кроссовер среднего размера,<br>
-                предлагающий просторный салон, передовые технологии и стильный дизайн.<br>
-                Он оснащен мощными двигателями, передовыми системами безопасности<br>
-                и комфорта, а также современными мультимедийными системами.<br>
-                Модель ориентирована на семейных и активных водителей,<br>
-                ищущих сочетание комфорта, функциональности и динамики.</p>
-          </div>
+            </div>
         </div>
     </div>
-
-    <script src="{% static 'main/js/script.js' %}"></script>
+<main>
+    <footer class="footer">
+    	<div class="container">
+    		<div class="footer__top">
+                <header class="header">
+                <div class="container">
+                    <div class="header__inner">
+                        <a class="logo" href="#">
+                         <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+                        </a>
+                        <ul class="header__menu">
+                            <a class="header__menu-link" href="{% url 'home' %}">
+                                <li class="header__menu-item">
+                                    Главная
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="{% url 'baza_home' %}">
+                                <li class="header__menu-item">
+                                    Модели
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Описание
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Контакты
+                                </li>
+                            </a>
+                        </ul>
+                        <div class="header__contact">
+                            <a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            </div>
+            <div class="footer__botton">
+            	<p class="footer__botton-text">
+            		© Все права защищены.
+            	</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 {% endblock %}
