@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="telo__row">
         <header class="header">
             <div class="container">
                 <div class="header__inner">
@@ -27,15 +27,10 @@
                         </a>
                         <a class="header__menu-link" href="{% url 'baza_home' %}">
                             <li class="header__menu-item">
-                                Новости
-                            </li>
-                        </a>
-                         <a class="header__menu-link" href="{% url 'modeli' %}">
-                            <li class="header__menu-item">
                                 Модели
                             </li>
                         </a>
-                        <a class="header__menu-link" href="{% url 'kompaniya' %}">
+                        <a class="header__menu-link" href="#">
                             <li class="header__menu-item">
                                 Описание
                             </li>
@@ -55,7 +50,7 @@
         <main>
             <div class="novosti">
                 <div class="container">
-                    <h1 class="novosti_title" style="color: #211414">Место положение компании.</h1>
+                    <h1 class="novosti_title" style="color: #211414">О компании.</h1>
                     <h1 class="novosti_title" style="color: #3b3535">Санкт-Петербург, улица Рыбинская, 1 лит.3.</h1>
                     <div style="position:relative;overflow:hidden;">
                         <a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps"
@@ -90,18 +85,49 @@
                 </div>
             </div>
         </main>
-        <foooter class="footer">
-            <div class="container">
-                <div class="footer__top"></div>
-                <div class="footer__botton">
-                    <div class="footer__content">
-                        <p class="footer__content-text">
-                            © Все права защищены.
-                        </p>
+        <footer class="footer">
+            <div class="footer__top">
+                <header class="header">
+                <div class="container">
+                    <div class="header__inner">
+                        <a class="logo" href="#">
+                         <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+                        </a>
+                        <ul class="header__menu">
+                            <a class="header__menu-link" href="{% url 'home' %}">
+                                <li class="header__menu-item">
+                                    Главная
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Модели
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Описание
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Контакты
+                                </li>
+                            </a>
+                        </ul>
+                        <div class="header__contact">
+                            <a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
+                        </div>
                     </div>
                 </div>
+            </header>
             </div>
-        </foooter>
+            <div class="footer__botton">
+            	<p class="footer__botton-text">
+            		© Все права защищены.
+            	</p>
+            </div>
+        </footer>
     </div>
     {% block content %}
     {% endblock%}
