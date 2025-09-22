@@ -12,6 +12,11 @@ def kompaniya(request):
 def baza_home(request):
     return render(request, 'main/baza_home.html')
 
+def modeli(request):
+    return render(request, 'main/modeli.html')
+
+def opisanie(request):
+    return render(request, 'main/opisanie.html')
 
 
 

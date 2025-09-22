@@ -16,8 +16,13 @@ li {
 }
 body {
   position: relative;
+<<<<<<< HEAD
   height: 130vh;
   background-color: #8d9395;
+=======
+  height: 150vh;
+  background-color: #8d9395;;
+>>>>>>> origin/main
 }
 .telo__row {
   display: flex;
@@ -28,6 +33,12 @@ body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+.container__modeli {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
 }
 .chery__img {
   width: 200px;
@@ -119,6 +130,7 @@ body {
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
+<<<<<<< HEAD
 .baza__stati {
   transition: all .5s;
   margin-top: 30px;
@@ -146,12 +158,19 @@ body {
         transform: translateY(-10px);
     }
 }
+=======
+>>>>>>> origin/main
 .baza__stati-img {
-  max-width: 200px;
+  margin-right: 20px;
 }
-.novosti_title {
-    color: #000;
+.baza__stati-content {
+  display: flex;
+  overflow: hidden;
+  border: 2px solid #fff;
+  background-color: #ff9317;
+  border-radius: 10px;
 }
+<<<<<<< HEAD
 .baza__stati-tile {
   font-size: 15px
 }
@@ -181,4 +200,190 @@ body {
 }
 .kompaniya__img {
     max-width: 450px;
+=======
+.novosti__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.novosti__block-img {
+  max-width: 280px;
+  height: 160px;
+}
+.novosti__block {
+  overflow: hidden;
+  cursor: pointer;
+  transition: all .5s;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  background-color: #fff;
+  text-align: center;
+  max-width: 300px;
+  height: 410px;
+}
+.novosti__block:hover {
+  -webkit-box-shadow: -8px -5px 18px 2px rgba(34, 60, 80, 0.25);
+  -moz-box-shadow: -8px -5px 18px 2px rgba(34, 60, 80, 0.25);
+  box-shadow: -8px -5px 18px 2px rgba(34, 60, 80, 0.25);
+}
+.novosti__block-title {
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.novosti__block-subtitle {
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.novosti__block-text {
+  font-size: 20px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+.novosti__block-btn {
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: #0945e5;
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  padding: 14px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.novosti__block-btn {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.novosti__block-btn:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+.novosti__block-btn:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+.novosti__block-btn:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+.novosti__block-btn-red {
+  border-radius: 4px;
+  background-color: red;
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  padding: 14px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.novosti__block-btn-red {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.novosti__block-btn-red:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+.novosti__block-btn-red:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+.novosti__block-btn-red:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+.modalbackground {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: rgba(0,0,0,0.5);
+  z-index:100;
+  opacity:0;
+  pointer-events: none;
+}
+.modalbackground:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modalwindow {
+  width: 100%;
+  max-width: 600px;
+  margin: 10% auto;
+  padding: 2%;
+  background: #fff;
+  border-radius: 3px;
+}
+.modalwindow h3 {
+  padding: 0;
+  margin: 0;
+}
+.modalwindow p {
+  padding: 0;
+  margin: 4% 0 8% 0;
+}
+.modalwindow a {
+  display: block;
+  color: #fff;
+  background: #0945e5;
+  padding: 2%;
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+.modalwindow a:hover {
+  background: #47a;
+}
+.opisanie__title {
+  text-align: center;
+  font-size: 25px;
+  line-height: 27px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.opisanie__img {
+  width: 100%;
+  height: 450px;
+}
+.opisanie__text {
+  color: #ccc;
+  font-size: 20px;
+  line-height: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.opisanie__subtitle {
+  font-size: 30px;
+  line-height: 27px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+>>>>>>> origin/main
 }
