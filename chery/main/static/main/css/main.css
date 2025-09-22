@@ -30,9 +30,10 @@ body {
   margin-right: auto;
 }
 .container__modeli {
-  max-width: 1400px;
+  max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
+  margin: 0 auto;
 }
 .chery__img {
   width: 200px;
@@ -246,4 +247,51 @@ body {
 .novosti__block-btn-red:hover:after {
   opacity: 1;
   right: 10px;
+}
+.modalbackground {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: rgba(0,0,0,0.5);
+  z-index:100;
+  opacity:0;
+  pointer-events: none;
+}
+.modalbackground:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modalwindow {
+  width: 100%;
+  max-width: 600px;
+  margin: 10% auto;
+  padding: 2%;
+  background: #fff;
+  border-radius: 3px;
+}
+.modalwindow h3 {
+  padding: 0;
+  margin: 0;
+}
+.modalwindow p {
+  padding: 0;
+  margin: 4% 0 8% 0;
+}
+.modalwindow a {
+  display: block;
+  color: #fff;
+  background: #0945e5;
+  padding: 2%;
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+.modalwindow a:hover {
+  background: #47a;
 }
