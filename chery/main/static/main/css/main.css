@@ -16,8 +16,8 @@ li {
 }
 body {
   position: relative;
-  height: 145vh;
-  background-color: #8d9395;
+  height: 150vh;
+  background-color: #8d9395;;
 }
 .telo__row {
   display: flex;
@@ -294,4 +294,29 @@ body {
 }
 .modalwindow a:hover {
   background: #47a;
+}
+.opisanie__title {
+  text-align: center;
+  font-size: 25px;
+  line-height: 27px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.opisanie__img {
+  width: 100%;
+  height: 450px;
+}
+.opisanie__text {
+  color: #ccc;
+  font-size: 20px;
+  line-height: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.opisanie__subtitle {
+  font-size: 30px;
+  line-height: 27px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }

@@ -15,6 +15,9 @@ def baza_home(request):
 def modeli(request):
     return render(request, 'main/modeli.html')
 
+def opisanie(request):
+    return render(request, 'main/opisanie.html')
+
 
 
 
