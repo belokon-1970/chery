@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="header__inner">
                     <a class="logo" href="{% url 'home' %}">
-                     <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+                        <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
                     </a>
                     <ul class="header__menu">
                         <a class="header__menu-link" href="{% url 'home' %}">
@@ -53,40 +53,41 @@
             </div>
         </header>
         <main>
-            <div class="novosti">
+            <div class="opisanie">
                 <div class="container">
-                    <h1 class="novosti_title" style="color: #211414">О компании.</h1>
-                    <h1 class="novosti_title" style="color: #3b3535">Санкт-Петербург, улица Рыбинская, 1 лит.3.</h1>
-                    <div style="position:relative;overflow:hidden;">
-                        <a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps"
-                           style="color:#eee;font-size:12px;position:absolute;top:0px;">Санкт‑Петербург</a>
-                        <a href="https://yandex.ru/maps/2/saint-petersburg/house/rybinskaya_ulitsa_1litz/Z0kYdQRjT0ACQFtjfXVwcH1mZA==/?ll=30.333825%2C59.
-                        910581&source=serp_navig&utm_medium=mapframe&utm_source=maps&z=16.4"
-                           style="color:#eee;font-size:12px;position:absolute;top:14px;">
-                            Яндекс Карты — транспорт, навигация, поиск мест</a><iframe
-                            src="https://yandex.ru/map-widget/v1/?ll=30.333825%2C59.910581&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNjIwNjQ5NzM5ElXQoNC-
-                            0YHRgdC40Y8sINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNGL0LHQuNC90YHQutCw0Y8g0YPQu9C40YbQsCwgMdC70LjRgtCXIgoNU6vyQRUFpW9C&source=serp_navig&z=16.4"
-                            width="100%" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
-                    <h2 class="novosti__subtitle" style="color: #211414">
-                        Автомобили Chery в Санкт-Петербурге
-                    </h2>
-                    <p class="novosti__text" style="color: #3b3535">
-                        Чери Центр Максимум Гражданский — дилерский центр автохолдинга «Максимум» в Санкт-Петербурге.
-                        Здесь можно купить Чери всех актуальных моделей китайского бренда, официально представленных в России.
-                        Чтобы ознакомиться с продуктовой линейкой, получить консультацию или узнать стоимость Чери интересующей модели,
-                        приезжайте в один из наших салонов по адресу: ул. Руставели 53 или ул. Рыбинская 1 в любой день недели с 9:00 до 21:00.
-                    </p>
-
-                    <h2 class="novosti__subtitle" style="color: #211414">
-                        Модельный ряд Chery
-                    </h2>
-                    <p class="novosti__text" style="color: #3b3535">
-                        В августе года автопроизводитель предлагает восемь моделей — семь кроссоверов самых популярных классов
-                        (от субкомпактного до среднеразмерного) и эффектный седан бизнес-класса. Каждый из автомобилей отличается
-                        высоким качеством изготовления кузова и других элементов, комфортным и функциональным салоном,
-                        передовым электронным оборудованием, а также надежным, достаточно мощным и экономичным двигателем.
-                    </p>
-
+                    <div class="opisanie__content">
+                        <h2 class="opisanie__title">
+                            О бренде Chery.
+                        </h2>
+                        <img class="opisanie__img" src="{% static 'main/img/brend.jpg' %}" alt="logo">
+                        <p class="opisanie__text">
+                            Chery — китайский автопроизводитель, основанный в 1997 году. С течением времени он стал одним из крупнейших<br>
+                            автомобильных брендов в мире благодаря постоянным инновациям и качеству своих продуктов.
+                        </p>
+                        <h2 class="opisanie__subtitle">
+                            История производителя.
+                        </h2>
+                        <p class="opisanie__text">
+                            Chery Automobile Co., Ltd., или просто Chery, — это китайская автомобильная компания, основанная в 1997 году.
+                        </p>
+                        <p class="opisanie__text">
+                            История компании Chery Automobile началась в 1997 году, когда правительство города Уху приняло решении о<br>
+                            создании полноценного промышленного предприятия. Вскоре началось строительство первого завода в провинции Аньхой.<br>
+                            Молодому концерну не удавалось получить лицензию на производство автомобилей, поэтому первыми товарами,<br>
+                            выпускаемыми под маркой Чери, стали двигатели внутреннего сгорания. Тем не менее, завод был оснащён производственной линией,<br>
+                            купленной у корпорации Ford. За неимением возможности реализовать даже первую опытную партию<br>
+                            копий Seat Toledo, в 1999 году производство было остановлено.
+                        </p>
+                        <p class="opisanie__text">
+                            В начале XXI века пятая часть акций Чери была передана шанхайской корпорации SAIC, которая к тому времени уже имела<br>
+                            успешные совместные предприятия с Volkswagen Group и General Motors. Сотрудничество со столь сильным игроком упростило<br>
+                            получение лицензии, и вскоре были представлены первые седаны бренда:
+                        </p>
+                        <p class="opisanie__text">
+                            - Fulwin — комбинированная версия немецких VW Santana и Jetta на базе Toledo.<br>
+                            - Amulet — экспортное название такого же автомобиля с минимальными доработками.
+                        </p>
+                    </div>
                 </div>
             </div>
         </main>
