@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-<header class="header">
-            <div class="container">
+    <div class="telo__row">
+        <header class="header">
+            <div class="container__modeli">
                 <div class="header__inner">
                     <a class="logo" href="{% url 'home' %}">
-                        <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+                     <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
                     </a>
                     <ul class="header__menu">
                         <a class="header__menu-link" href="{% url 'home' %}">
@@ -24,14 +25,19 @@
                                 Главная
                             </li>
                         </a>
-                        <a class="header__menu-link" href="#">
+                        <a class="header__menu-link" href="{% url 'baza_home' %}">
+                            <li class="header__menu-item">
+                                Новости
+                            </li>
+                        </a>
+                        <a class="header__menu-link" href="{% url 'modeli' %}">
                             <li class="header__menu-item">
                                 Модели
                             </li>
                         </a>
                         <a class="header__menu-link" href="#">
                             <li class="header__menu-item">
-                                О Компании
+                                Описание
                             </li>
                         </a>
                         <a class="header__menu-link" href="#">
@@ -41,52 +47,163 @@
                         </a>
                     </ul>
                     <div class="header__contact">
-                        <a class="header__contact-btn" href="#">Позонить нам</a>
+                        <a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
                     </div>
                 </div>
             </div>
         </header>
-    <footer class="footer">
-    	<div class="container">
-    		<div class="footer__top">
-    			<div class="header__inner footer__border">
-                <a class="logo" href="#">
-                    <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
-                </a>
-                <ul class="header__menu">
-                    <a class="header__menu-link" href="">
-                        <li class="header__menu-item">
-                            Главная
-                        </li>
-                    </a>
-                    <a class="header__menu-link" href="/modeli">
-                        <li class="header__menu-item">
-                            Модели
-                        </li>
-                    </a>
-                    <a class="header__menu-link" href="#">
-                        <li class="header__menu-item">
-                            О Компании
-                        </li>
-                    </a>
-                    <a class="header__menu-link" href="#">
-                        <li class="header__menu-item">
-                            Контакты
-                        </li>
-                    </a>
-                </ul>
-                <div class="header__contact">
-                	<a class="header__contact-btn" href="#">Позонить нам</a>
+        <main>
+            <div class="novosti">
+                <div class="container__modeli">
+                    <h1 class="novosti_title" style="color: #211414">О компании.</h1>
+                    <p class="novosti_title" style="color: #3b3535">На данной странице, вы найдете модели,<br>
+                    Которые есть у нас сейчас в наличие на данный момент.</p>
+
+                    <div class="novosti__row">
+
+                        <div class="novosti__block">
+                            <div class="novosti__block-content">
+                                <img class="novosti__block-img" src="{% static 'main/img/chery1.png' %}" alt="images">
+                                <h2 class="novosti__block-title">TIGGO 9</h2>
+                                <h2 class="novosti__block-subtitle">от 3 750 000 ₽*</h2>
+                                <p class="novosti__block-text">от 1 750 000 ₽*</p>
+                                <a class="novosti__block-btn" href="#"><span>Подробнее</span></a>
+                                <a class="novosti__block-btn-red" href="#"><span>Рассчитать</span></a>
+                            </div>
+                        </div>
+
+                        <div class="novosti__block">
+                            <div class="novosti__block-content">
+                                <img class="novosti__block-img" src="{% static 'main/img/chery2.png' %}" alt="images">
+                                <h2 class="novosti__block-title">TIGGO  8 PRO MAX</h2>
+                                <h2 class="novosti__block-subtitle">от 2 940 000 ₽*</h2>
+                                <p class="novosti__block-text">выгода до 300 000 ₽*</p>
+                                <a class="novosti__block-btn" href="#"><span>Подробнее</span></a>
+                                <a class="novosti__block-btn-red" href="#"><span>Рассчитать</span></a>
+                            </div>
+                        </div>
+
+                        <div class="novosti__block">
+                            <div class="novosti__block-content">
+                                <img class="novosti__block-img" src="{% static 'main/img/chery3.png' %}" alt="images">
+                                <h2 class="novosti__block-title">НОВЫЙ TIGGO 7L</h2>
+                                <h2 class="novosti__block-subtitle">от 2 630 000 ₽*</h2>
+                                <p class="novosti__block-text">выгода до 100 000 ₽*</p>
+                                <a class="novosti__block-btn" href="#"><span>Подробнее</span></a>
+                                <a class="novosti__block-btn-red" href="#"><span>Рассчитать</span></a>
+                            </div>
+                        </div>
+
+                        <div class="novosti__block">
+                            <div class="novosti__block-content">
+                                <img class="novosti__block-img" src="{% static 'main/img/chery4.png' %}" alt="images">
+                                <h2 class="novosti__block-title">TIGGO 7 PRO MAX</h2>
+                                <h2 class="novosti__block-subtitle">от 2 460 000 ₽*</h2>
+                                <p class="novosti__block-text">выгода до 100 000 ₽*</p>
+                                <a class="novosti__block-btn" href="#"><span>Подробнее</span></a>
+                                <a class="novosti__block-btn-red" href="#"><span>Рассчитать</span></a>
+                            </div>
+                        </div>
+
+                        <div class="novosti__block">
+                            <div class="novosti__block-content">
+                                <img class="novosti__block-img" src="{% static 'main/img/chery5.png' %}" alt="images">
+                                <h2 class="novosti__block-title">TIGGO 4</h2>
+                                <h2 class="novosti__block-subtitle">от 1 999 000 ₽*</h2>
+                                <p class="novosti__block-text">выгода до 130 000 ₽*</p>
+                                <a class="novosti__block-btn" href="#"><span>Подробнее</span></a>
+                                <a class="novosti__block-btn-red" href="#"><span>Рассчитать</span></a>
+                            </div>
+                        </div>
+
+                        <div class="novosti__block">
+                            <div class="novosti__block-content">
+                                <img class="novosti__block-img" src="{% static 'main/img/chery6.jpg' %}" alt="images">
+                                <h2 class="novosti__block-title">TIGGO 4 PRO</h2>
+                                <h2 class="novosti__block-subtitle">от 1 970 000 ₽*</h2>
+                                <p class="novosti__block-text">выгода до 130 000 ₽*</p>
+                                <a class="novosti__block-btn" href="#"><span>Подробнее</span></a>
+                                <a class="novosti__block-btn-red" href="#"><span>Рассчитать</span></a>
+                            </div>
+                        </div>
+
+                        <div class="novosti__block">
+                            <div class="novosti__block-content">
+                                <img class="novosti__block-img" src="{% static 'main/img/chery7.jpeg' %}" alt="images">
+                                <h2 class="novosti__block-title">ARRIZO 8</h2>
+                                <h2 class="novosti__block-subtitle">от 2 760 000 ₽*</h2>
+                                <p class="novosti__block-text">выгода до 50 000 ₽*</p>
+                                <a class="novosti__block-btn" href="#"><span>Подробнее</span></a>
+                                <a class="novosti__block-btn-red" href="#"><span>Рассчитать</span></a>
+                            </div>
+                        </div>
+
+                        <div class="novosti__block">
+                            <div class="novosti__block-content">
+                                <img class="novosti__block-img" src="{% static 'main/img/chery8.png' %}" alt="images">
+                                <h2 class="novosti__block-title">TIGGO 8 PRO PLUG-IN</h2>
+                                <h2 class="novosti__block-subtitle">от 3 699 000 ₽*</h2>
+                                <p class="novosti__block-text">выгода до 1 151 000 ₽*</p>
+                                <a class="novosti__block-btn" href="#"><span>Подробнее</span></a>
+                                <a class="novosti__block-btn-red" href="#"><span>Рассчитать</span></a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__top">
+                <header class="header">
+                <div class="container__modeli">
+                    <div class="header__inner">
+                        <a class="logo" href="#">
+                         <img class="chery__img" src="{% static 'main/img/chery.png' %}" alt="logo">
+                        </a>
+                        <ul class="header__menu">
+                            <a class="header__menu-link" href="{% url 'home' %}">
+                                <li class="header__menu-item">
+                                    Главная
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Новости
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                            <li class="header__menu-item">
+                                Модели
+                            </li>
+                        </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Описание
+                                </li>
+                            </a>
+                            <a class="header__menu-link" href="#">
+                                <li class="header__menu-item">
+                                    Контакты
+                                </li>
+                            </a>
+                        </ul>
+                        <div class="header__contact">
+                            <a class="header__contact-btn" href="tel:+79216841074">Позонить нам</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
             </div>
             <div class="footer__botton">
             	<p class="footer__botton-text">
             		© Все права защищены.
             	</p>
             </div>
-                </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
     {% block content %}
     {% endblock%}
     </main>
+</body>
+</html>
