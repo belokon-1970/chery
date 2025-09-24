@@ -3,184 +3,271 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+  <title>Кредитный калькулятор транспорта</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --card: #141b2e;
-      --primary: #4f8cff;
-      --text: #e8eaf6;
-      --muted: #a6aec7;
-      --input: #1e2540;
-      --shadow: 0 10px 25px rgba(0,0,0,.25);
+      --bg: #0f1020;
+      --card: #171a2a;
+      --muted: #9aa2b1;
+      --primary: #4a8cff;
+      --accent: #21d4fd;
+      --green: #28c76f;
+      --red: #e74c3c;
+      --white: #ffffff;
     }
+
     * { box-sizing: border-box; }
     body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      background: linear-gradient(135deg, #0b1020 0%, #1a2140 100%);
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #1a1e2a 0%, #0b1020 100%);
+      color: var(--white);
+      padding: 40px;
     }
+
     .card {
-      width: 100%;
       max-width: 720px;
-      background: linear-gradient(180deg, rgba(20,26,48,.98), rgba(20,26,48,.92) 60%), var(--card);
-      border-radius: 14px;
-      padding: 20px 20px 16px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.05);
+      margin: 0 auto;
+      background: rgba(23,26,42,.95);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
     }
+
     h1 {
-      font-size: 1.25rem;
       margin: 0 0 12px;
-      color: #fff;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    label {
-      display: block;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    input[type="number"], select {
-      width: 100%;
-      padding: 12px 12px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,.15);
-      background: var(--input);
-      color: #fff;
-      font-size: 1rem;
-    }
-    .full { grid-column: 1 / span 2; }
-    .row { display: flex; align-items: center; gap: 8px; }
-    .range { width: 100%; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px;
-      border-radius: 8px;
-      border: none;
-      background: linear-gradient(135deg, #4f8cff, #2e6bd9);
-      color: #fff;
+      font-size: 20px;
       font-weight: 600;
-      cursor: pointer;
-      transition: transform .2s;
     }
-    .btn:active { transform: translateY(1px) scale(0.98); }
-    .result {
+
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 240px;
+      flex: 1 1 45%;
+    }
+
+    label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #0e1323;
       color: #fff;
+      outline: none;
+    }
+
+    .btns {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
       margin-top: 6px;
+    }
+
+    button {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .05s ease;
+    }
+
+    button:active { transform: translateY(1px); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border-color: rgba(0,0,0,.2);
+    }
+
+    .btn-secondary {
+      background: #1f2a44;
+      color: #e9f0ff;
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    .results {
+      margin-top: 16px;
       padding: 12px;
       border-radius: 8px;
-      background: rgba(78, 88, 162, 0.25);
-      border: 1px solid rgba(78, 88, 162, 0.5);
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.08);
     }
-    .muted { color: var(--muted); font-size: 0.9rem; }
-    @media (max-width: 700px) {
-      .grid { grid-template-columns: 1fr; }
-      .full { grid-column: 1 / -1; }
+
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(255,255,255,.08);
+    }
+
+    .result-item:last-child { border-bottom: none; }
+
+    .label { color: var(--muted); }
+    .value { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+
+    @media (max-width: 640px) {
+      .field { min-width: 100%; }
     }
   </style>
 </head>
 <body>
-  <section class="card" aria-label="Кредитный калькулятор транспорта">
+  <div class="card">
     <h1>Кредитный калькулятор транспорта</h1>
 
-    <div class="grid" id="form-grid">
-      <div class="field">
-        <label for="amount">Сумма кредита (руб):</label>
-        <input type="number" id="amount" min="1000" step="1000" value="8000000" />
-      </div>
+    <div class="row">
+      <div class="field" style="flex:1 1 100%;">
+        <label for="vehicle">Транспортное средство</label>
+        <select id="vehicle">
+          <option value="" data-price="0" disabled selected>Выберите транспорт</option>
+            <option value="sedan" data-price="3750000">TIGGO 9 — 3 750 000</option>
+            <option value="suv" data-price="2940000">TIGGO  8 PRO MAX — 2 940 000</option>
+            <option value="hatch" data-price="2630000">НОВЫЙ TIGGO 7L — 2 630 000</option>
+            <option value="electric" data-price="2460000">TIGGO 7 PRO MAX — 2460000</option>
 
-      <div class="field">
-        <label for="rate">Годовая ставка (%):</label>
-        <input type="number" id="rate" min="0" step="0.01" value="9.9" />
-      </div>
-
-      <div class="field">
-        <label for="years">Срок кредита (лет):</label>
-        <input type="number" id="years" min="1" max="30" step="1" value="5" />
-      </div>
-
-      <div class="field full">
-        <label for="paymentsPerYear">Частота платежей:</label>
-        <select id="paymentsPerYear" aria-label="Частота платежей">
-          <option value="12" selected>Ежемесячно</option>
-          <option value="6">Раз в полгода</option>
-          <option value="4">Раз в квартал</option>
+            <option value="electric" data-price="1999000">TIGGO 4 — 1 999 000</option>
+            <option value="electric" data-price="1970000">TIGGO 4 PRO — 1 970 000</option>
+            <option value="electric" data-price="2 760 000">ARRIZO 8 — 2 760 000</option>
+            <option value="electric" data-price="3699000">TIGGO 8 PRO PLUG-IN — 3 699 000</option>
         </select>
       </div>
+    </div>
 
-      <div class="field full" style="text-align:center;">
-        <button class="btn" id="calculateBtn" type="button" aria-label="Рассчитать EMI">
-          Рассчитать EMI
-        </button>
+    <div class="row">
+      <div class="field">
+        <label for="price">Цена автомобиля</label>
+        <input type="number" id="price" step="1" min="0" placeholder="0" />
       </div>
 
-      <div class="field full" id="result" style="display:none;">
-        <div class="result" aria-live="polite">
-          <div>Ежемесячный платеж: <strong id="emi">0</strong> руб/платёж</div>
-          <div>Общая выплата: <strong id="totalPay">0</strong> руб</div>
-          <div>Переплата: <strong id="overpayment">0</strong> руб</div>
-        </div>
+      <div class="field">
+        <label for="down">Первоначальный взнос</label>
+        <input type="number" id="down" step="1" min="0" value="0" />
+      </div>
+
+      <div class="field">
+        <label for="term">Срок кредита (лет)</label>
+        <input type="number" id="term" step="1" min="1" value="5" />
+      </div>
+
+      <div class="field">
+        <label for="rate">Годовая ставка (%)</label>
+        <input type="number" id="rate" step="0.01" min="0" value="7" />
       </div>
     </div>
-  </section>
+
+    <div class="btns">
+      <button class="btn-secondary" id="resetBtn" type="button">Сбросить</button>
+      <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
+    </div>
+
+    <div class="results" id="results" style="display:none;">
+      <div class="result-item">
+        <span class="label">Ежемесячный платеж (EMI)</span>
+        <span class="value" id="emi">0</span>
+      </div>
+      <div class="result-item">
+        <span class="label">Общая выплата</span>
+        <span class="value" id="totalPay">0</span>
+      </div>
+      <div class="result-item">
+        <span class="label">Переплата</span>
+        <span class="value" id="overpay">0</span>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Вспомогательная функция форматирования числа
-    function fmt(n) {
-      return new Intl.NumberFormat('ru-RU', { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(n);
+    function calculateEMI(principal, annualRate, years) {
+      const n = years * 12;
+      const r = annualRate / 12 / 100;
+      if (principal <= 0 || n <= 0 || r <= 0) return 0;
+      const pow = Math.pow(1 + r, n);
+      const emi = principal * r * pow / (pow - 1);
+      return emi;
     }
 
-    function computeEMI(principal, annualRate, years, paymentsPerYear) {
-      // Приводим к периодам платежей
-      const r = (annualRate / 100) / paymentsPerYear;
-      const n = years * paymentsPerYear;
-      if (r === 0) return { payment: principal / n, total: principal, interest: 0 };
-      const payment = principal * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
-      const total = payment * n;
-      const interest = total - principal;
-      return { payment, total, interest };
+    const vehicleSelect = document.getElementById('vehicle');
+    const priceInput = document.getElementById('price');
+    const downInput = document.getElementById('down');
+    const termInput = document.getElementById('term');
+    const rateInput = document.getElementById('rate');
+    const calcBtn = document.getElementById('calcBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const resultsBox = document.getElementById('results');
+    const emiEl = document.getElementById('emi');
+    const totalPayEl = document.getElementById('totalPay');
+    const overpayEl = document.getElementById('overpay');
+
+    vehicleSelect.addEventListener('change', () => {
+      const opt = vehicleSelect.selectedOptions[0];
+      const price = parseFloat(opt?.dataset?.price || 0);
+      if (!Number.isNaN(price) && price > 0) {
+        priceInput.value = price;
+      }
+    });
+
+    function formatMoney(n) {
+      return new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', maximumFractionDigits: 0 }).format(n);
     }
 
-    document.getElementById('calculateBtn').addEventListener('click', function() {
-      const amount = parseFloat(document.getElementById('amount').value) || 0;
-      const rate = parseFloat(document.getElementById('rate').value) || 0;
-      const years = parseInt(document.getElementById('years').value) || 0;
-      const paymentsPerYear = parseInt(document.getElementById('paymentsPerYear').value) || 12;
+    function trim(n) {
+      return Math.round(n);
+    }
 
-      if (amount <= 0 || rate < 0 || years <= 0) {
-        alert('Пожалуйста, заполните корректные значения.');
+    calcBtn.addEventListener('click', () => {
+      const price = parseFloat(priceInput.value) || 0;
+      const down = parseFloat(downInput.value) || 0;
+      const principal = price - down;
+      const years = parseFloat(termInput.value) || 0;
+      const rate = parseFloat(rateInput.value) || 0;
+
+      if (price <= 0) {
+        alert('Укажите корректную цену автомобиля.');
+        return;
+      }
+      if (principal <= 0) {
+        alert('Первоначальный взнос должен быть меньше цены.');
+        return;
+      }
+      if (years <= 0) {
+        alert('Укажите срок кредита в годах.');
         return;
       }
 
-      const result = computeEMI(amount, rate, years, paymentsPerYear);
-      const emiRounded = Math.round(result.payment);
-      const totalRounded = Math.round(result.total);
-      const overRounded = Math.round(result.interest);
+      const emi = calculateEMI(principal, rate, years);
+      const totalPay = emi * years * 12;
+      const overpay = totalPay - principal;
 
-      document.getElementById('emi').textContent = fmt(emiRounded);
-      document.getElementById('totalPay').textContent = fmt(totalRounded);
-      document.getElementById('overpayment').textContent = fmt(overRounded);
+      emiEl.textContent = formatMoney(emi);
+      totalPayEl.textContent = formatMoney(totalPay);
+      overpayEl.textContent = formatMoney(overpay);
 
-      document.getElementById('result').style.display = 'block';
+      resultsBox.style.display = 'block';
+    });
+
+    resetBtn.addEventListener('click', () => {
+      priceInput.value = '';
+      downInput.value = '0';
+      termInput.value = '5';
+      rateInput.value = '7';
+      vehicleSelect.selectedIndex = 0;
+      resultsBox.style.display = 'none';
     });
   </script>
 </body>
 </html>
-    {% block content %}
-{% endblock%}
