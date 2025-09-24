@@ -18,6 +18,9 @@ def modeli(request):
 def opisanie(request):
     return render(request, 'main/opisanie.html')
 
+def calkulete(request):
+    return render(request, 'main/calkulete.html')
+
 
 
 
