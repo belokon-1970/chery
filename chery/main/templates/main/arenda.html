@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Аренда автомобилей</title>
+  <style>
+    :root {
+      --bg: #0f111a;
+      --card: #171b26;
+      --muted: #8a92a6;
+      --primary: #4cc9f0;
+      --accent: #6d9e4f;
+      --border: #2a3244;
+      --text: #e8eefc;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #0b0e17; color: var(--text); }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #121724 0%, #0b0f1a 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 { margin: 0; font-size: 28px; letter-spacing: .5px; }
+    header p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+
+    .controls {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+      padding: 12px 0;
+    }
+    .input-group {
+      display: flex; align-items: center; gap: 8px;
+    }
+    label { font-size: 14px; color: var(--muted); }
+    input[type="number"] {
+      width: 120px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border);
+      background: #0f1420; color: #fff;
+    }
+    select {
+      padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+      background: #0f1420; color: #fff;
+    }
+    button.primary {
+      padding: 10px 14px; border: none; border-radius: 8px; background: var(--primary); color: #041018;
+      cursor: pointer; font-weight: 600;
+    }
+    button.secondary {
+      padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; background: #141921; color: #e8eefc;
+      cursor: pointer;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      background: linear-gradient(#171b26, #0e1220);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: transform .2s ease;
+    }
+    .card:hover { transform: translateY(-2px); }
+    .card h3 { margin: 0; font-size: 16px; }
+    .badge {
+      display: inline-block; padding: 4px 8px; border-radius: 999px;
+      background: #1e2633; color: #cbd5e1; font-size: 12px;
+    }
+    .price { font-size: 18px; font-weight: 700; color: #e9f1ff; }
+    .specs { font-size: 12px; color: var(--muted); }
+    .card .actions { display: flex; justify-content: space-between; align-items: center; }
+
+    /* Подсветка активной карточки (выбор) */
+    .card.selected { outline: 2px solid var(--primary); }
+
+    footer { text-align: center; padding: 20px 0; color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .controls { flex-direction: column; align-items: stretch; }
+      .input-group { justify-content: space-between; }
+      input[type="number"] { width: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Список машин для аренды</h1>
+    <p>Выберите транспорт и укажите количество дней аренды</p>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Фильтры и расчет">
+      <div class="input-group">
+        <label for="days">Дней аренды</label>
+        <input id="days" type="number" min="1" value="3" />
+      </div>
+
+      <div class="input-group">
+        <label for="currency">Валюта</label>
+        <select id="currency" aria-label="Валюта">
+          <option value="RUB" selected>RUB</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+      </div>
+
+      <button class="primary" id="calculateBtn" onclick="calculateTotal()">Рассчитать</button>
+      <button class="secondary" onclick="resetSelection()">Сброс</button>
+    </section>
+
+    <section class="grid" id="carGrid" aria-label="Карточки автомобилей">
+    </section>
+
+    <section id="summary" style="margin-top:18px; padding:12px 0; color: #e8eefc;">
+      <strong>Итого:</strong> <span id="summaryText">0 RUB</span>
+    </section>
+  </main>
+
+  <footer>© Аренда транспорта. Все цены условны и зависят от выбранных опций.</footer>
+
+  <script>
+    const cars = [
+      { id: "tiggo9",  name: "TIGGO 9",          price: 4200, features: "5 мест • автомат • бензин" },
+      { id: "tiggo8p", name: "TIGGO 8 PRO MAX",  price: 3900, features: "5 мест • автомат • бензин" },
+      { id: "tiggo7l", name: "НОВЫЙ TIGGO 7L",  price: 3600, features: "5 мест • автомат • бензин" },
+      { id: "tiggo7p", name: "TIGGO 7 PRO MAX",  price: 3800, features: "5 мест • автомат • бензин" },
+      { id: "tiggo4",  name: "TIGGO 4",           price: 2500, features: "5 мест • автомат • бензин" },
+      { id: "tiggo4p", name: "TIGGO 4 PRO",       price: 2700, features: "5 мест • автомат • бензин" },
+      { id: "arrizo8", name: "ARRIZO 8",          price: 3300, features: "5 мест • автомат • бензин" },
+      { id: "tiggo8ppl", name: "TIGGO 8 PRO PLUG-IN", price: 4800, features: "5 мест • автомат • ПЛАГ-ИН" }
+    ];
+
+    const currencyRates = {
+      RUB: 1,
+      USD: 98,
+      EUR: 108
+    };
+
+    const grid = document.getElementById('carGrid');
+    const daysInput = document.getElementById('days');
+    const summaryText = document.getElementById('summaryText');
+    let selectedCardId = null;
+
+    function formatPrice(amount, cur) {
+      const value = Math.round(amount);
+      const rate = currencyRates[cur] || 1;
+      const converted = value / 1;
+      const display = cur === 'RUB' ? `${converted} RUB` :
+                      cur === 'USD' ? `${(converted / rate).toFixed(2)} USD` :
+                      `${(converted / rate).toFixed(2)} EUR`;
+      const final = cur === 'RUB' ? `${converted} RUB` :
+                    cur === 'USD' ? `${(converted / 1 / (rate/100)).toFixed(2)} USD` :
+                    `${(converted / 1 / (rate/100)).toFixed(2)} EUR`;
+      return final;
+    }
+
+    function createCard(car) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.id = `card-${car.id}`;
+
+      const title = document.createElement('h3');
+      title.textContent = car.name;
+      card.appendChild(title);
+
+      const price = document.createElement('div');
+      price.className = 'price';
+      price.textContent = `${car.price} RUB/день`;
+      card.appendChild(price);
+
+      const specs = document.createElement('div');
+      specs.className = 'specs';
+      specs.textContent = car.features;
+      card.appendChild(specs);
+
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+
+      const selectBtn = document.createElement('button');
+      selectBtn.textContent = 'Выбрать';
+      selectBtn.className = 'secondary';
+      selectBtn.onclick = () => {
+        if (selectedCardId) {
+          const prev = document.getElementById(selectedCardId);
+          if (prev) prev.classList.remove('selected');
+        }
+        selectedCardId = card.id;
+        card.classList.add('selected');
+      };
+
+      const priceTag = document.createElement('span');
+      priceTag.textContent = `${car.price} RUB/день`;
+
+      actions.appendChild(selectBtn);
+      actions.appendChild(priceTag);
+      card.appendChild(actions);
+
+      return card;
+    }
+
+    function renderGrid() {
+      grid.innerHTML = '';
+      for (const c of cars) {
+        grid.appendChild(createCard(c));
+      }
+    }
+
+    function calculateTotal() {
+      const days = parseInt(daysInput.value) || 0;
+      if (!selectedCardId) {
+        summaryText.textContent = `0 RUB`;
+        return;
+      }
+      const selected = cars.find(c => `card-${c.id}` === selectedCardId);
+      const baseRub = selected ? selected.price * days : 0;
+
+      const cur = document.getElementById('currency').value;
+      const rate = currencyRates[cur] || 1;
+      // Здесь конвертация приблизительная: RUB -> выбранная валюта
+      const converted = baseRub / rate;
+
+      let display;
+      if (cur === 'RUB') display = `${Math.round(baseRub)} RUB`;
+      else if (cur === 'USD') display = `${(baseRub /  rate).toFixed(2)} USD`;
+      else display = `${(baseRub / rate).toFixed(2)} EUR`;
+
+      summaryText.textContent = display;
+    }
+
+    function resetSelection() {
+      if (selectedCardId) {
+        const prev = document.getElementById(selectedCardId);
+        if (prev) prev.classList.remove('selected');
+        selectedCardId = null;
+      }
+      daysInput.value = 3;
+      document.getElementById('currency').value = 'RUB';
+      summaryText.textContent = '0 RUB';
+    }
+
+    renderGrid();
+  </script>
+</body>
+</html>
+    {% block content %}
+    {% endblock%}
+    </main>
+</body>
+</html>

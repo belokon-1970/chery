@@ -21,6 +21,8 @@ def opisanie(request):
 def calkulete(request):
     return render(request, 'main/calkulete.html')
 
+def arenda(request):
+    return render(request, 'main/arenda.html')
 
 
 
