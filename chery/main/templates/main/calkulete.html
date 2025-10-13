@@ -28,7 +28,7 @@
     .card {
       max-width: 720px;
       margin: 0 auto;
-      background: rgba(23,26,42,.95);
+      background: rgb(47 50 73 / 95%);
       border: 1px solid rgba(255,255,255,.08);
       border-radius: 12px;
       padding: 20px;
@@ -135,14 +135,15 @@
         <label for="vehicle">Транспортное средство</label>
         <select id="vehicle">
           <option value="" data-price="0" disabled selected>Выберите транспорт</option>
-          <option value="sedan" data-price="3750000">TIGGO 9 - 3 750 000</option>
-          <option value="suv" data-price="2940000">TIGGO  8 PRO MAX — 2 940 000</option>
-          <option value="hatch" data-price="2630000">НОВЫЙ TIGGO 7L — 2 630 000</option>
-          <option value="electric" data-price="2460000">TIGGO 7 PRO MAX — 2 460 000</option>
-          <option value="sedan" data-price="1999000">TIGGO 4 - 1 999 000</option>
-          <option value="suv" data-price="1970000">TIGGO 4 PRO — 1 970 000</option>
-          <option value="hatch" data-price="2760000">ARRIZO 8 — 2 760 000</option>
-          <option value="electric" data-price="3699000">TIGGO 8 PRO PLUG-IN — 3 699 000</option>
+            <option value="sedan" data-price="3750000">TIGGO 9 — 3 750 000</option>
+            <option value="suv" data-price="2940000">TIGGO  8 PRO MAX — 2 940 000</option>
+            <option value="hatch" data-price="2630000">НОВЫЙ TIGGO 7L — 2 630 000</option>
+            <option value="electric" data-price="2460000">TIGGO 7 PRO MAX — 2460000</option>
+
+            <option value="electric" data-price="1999000">TIGGO 4 — 1 999 000</option>
+            <option value="electric" data-price="1970000">TIGGO 4 PRO — 1 970 000</option>
+            <option value="electric" data-price="2 760 000">ARRIZO 8 — 2 760 000</option>
+            <option value="electric" data-price="3699000">TIGGO 8 PRO PLUG-IN — 3 699 000</option>
         </select>
       </div>
     </div>
@@ -176,7 +177,7 @@
 
     <div class="results" id="results" style="display:none;">
       <div class="result-item">
-        <span class="label">Ежемесячный платеж (EMI)</span>
+        <span class="label">Ежемесячный платеж</span>
         <span class="value" id="emi">0</span>
       </div>
       <div class="result-item">
@@ -191,12 +192,6 @@
   </div>
 
   <script>
-    // Вспомогательная функция: EMI
-    // EMI = P * r * (1+r)^n / ((1+r)^n - 1)
-    // где:
-    // P - сумма кредита
-    // r - месячная ставка (годовая / 12 / 100)
-    // n - количество месяцев
     function calculateEMI(principal, annualRate, years) {
       const n = years * 12;
       const r = annualRate / 12 / 100;
@@ -218,7 +213,6 @@
     const totalPayEl = document.getElementById('totalPay');
     const overpayEl = document.getElementById('overpay');
 
-    // Обновление цены при выборе варианта
     vehicleSelect.addEventListener('change', () => {
       const opt = vehicleSelect.selectedOptions[0];
       const price = parseFloat(opt?.dataset?.price || 0);
@@ -256,7 +250,6 @@
       }
 
       const emi = calculateEMI(principal, rate, years);
-      // Общая выплата и переплата
       const totalPay = emi * years * 12;
       const overpay = totalPay - principal;
 
@@ -278,5 +271,3 @@
   </script>
 </body>
 </html>
-{% block content %}
-{% endblock%}
