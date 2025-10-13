@@ -1,1 +1,30 @@
-__pychache__
+__pychache__### Example user template template
+### Example user template
+
+# IntelliJ project files
+# Виртуальное окружение
+venv/
+env/
+*.pyenv/
+.python-version
+
+# Файлы настроек и секретов
+.env
+config.ini
+
+# Кэш и временные файлы
+pycache/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Сборки и статические файлы
+db.sqlite3
+staticfiles/
+media/
+
+# IDE и другие программы
+.idea/
+.vscode/
+.DS_Store
